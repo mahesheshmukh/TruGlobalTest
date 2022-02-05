@@ -1,0 +1,26 @@
+{
+  "server": "hub-cloud.browserstack.com",
+  "user": "maheshd_oQ8Opf",
+  "key": "HqDGuhu6i1NnEqiW53xv",
+
+  "capabilities": {
+    "build": "Amazon Mobile Parallel",
+    "name": "parallelmobile_test",
+    "browserstack.debug": true
+  },
+
+"environments":{
+    "env1": {
+     	"browserName": "Chrome",
+	"device": "Google Pixel 3",
+	"os_version": "9.0",
+	"name": "Google Pixel"
+    },
+    "env2": {
+      	"browserName": "Firefox",
+	"device": "Samsung Galaxy Note 20 Ultra",
+	"os_version": "10.0",
+	"name": "Samsung Galaxy"
+    }
+}
+}

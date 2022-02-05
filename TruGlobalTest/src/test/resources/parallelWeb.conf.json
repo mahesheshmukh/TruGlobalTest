@@ -1,0 +1,20 @@
+{
+  "server": "hub-cloud.browserstack.com",
+  "user": "maheshd_oQ8Opf",
+  "key": "HqDGuhu6i1NnEqiW53xv",
+
+  "capabilities": {
+    "build": "Amazon Web Parallel",
+    "name": "parallel_test",
+    "browserstack.debug": true
+  },
+
+  "environments": {
+    "env1": {
+      "browser": "chrome"
+    },
+    "env2": {
+      "browser": "firefox"
+    }
+  }
+}

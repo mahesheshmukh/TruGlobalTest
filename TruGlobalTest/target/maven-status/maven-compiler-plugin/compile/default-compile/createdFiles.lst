@@ -1,0 +1,10 @@
+CodeBase\Web\AmazonSeg.class
+Utilities\Reports.class
+PageObjects\MobAddToCart.class
+BaseClass\MainTestClass.class
+Utilities\MobileReports.class
+CodeBase\Mobile\AmazonMobSeg.class
+BaseClass\MobileTestBase.class
+Utilities\ReadExcel.class
+Utilities\CommonFunctions.class
+PageObjects\AddToCartRep.class
