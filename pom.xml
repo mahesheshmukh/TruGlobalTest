@@ -101,7 +101,7 @@
 					<version>2.19.1</version>
 					<configuration>
 						<suiteXmlFiles>
-							<suiteXmlFile>${project.basedir}/config/parallelWeb.xml</suiteXmlFile>
+							<suiteXmlFile>${project.basedir}/config/parallelTest.xml</suiteXmlFile>
 						</suiteXmlFiles>
 					</configuration>
 				</plugin>
