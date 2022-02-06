@@ -39,8 +39,8 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class MobileTestBase {
 	public static AndroidDriver<WebElement> driver;
-	public static final String USERNAME = "maheshd_oQ8Opf";
-	public static final String AUTOMATE_KEY = "HqDGuhu6i1NnEqiW53xv";
+	public static final String USERNAME = "mtestd_EwUhQM";
+	public static final String AUTOMATE_KEY = "yqmTsTkWhxzRrfjxDP9q";
 	public static final String URL = "https://" + USERNAME + ":" + AUTOMATE_KEY + "@hub-cloud.browserstack.com/wd/hub";
 	public static String currentDir = System.getProperty("user.dir");
 	public static final String timeStamp = new SimpleDateFormat("yyMdHms").format(new Date());
