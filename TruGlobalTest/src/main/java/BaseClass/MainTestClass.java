@@ -18,6 +18,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -41,7 +42,7 @@ public class MainTestClass {
 	public static final String USERNAME = "maheshd_oQ8Opf";
 	public static final String AUTOMATE_KEY = "HqDGuhu6i1NnEqiW53xv";
 	public static final String URL = "https://" + USERNAME + ":" + AUTOMATE_KEY + "@hub-cloud.browserstack.com/wd/hub";
-	public static WebDriver driver = null;
+	public static RemoteWebDriver driver;
 	public static String currentDir = System.getProperty("user.dir");
 	public static String timeStamp = new SimpleDateFormat("yyMdHms").format(new Date());
 	private Local l;
@@ -70,8 +71,6 @@ public class MainTestClass {
 
 	@BeforeMethod(alwaysRun = true)
 	@org.testng.annotations.Parameters(value = { "config", "environment" })
-	@SuppressWarnings("unchecked")
-	@Configuration
 	public void openBrowserstack(String config_file, String environment) throws InterruptedException{
 		try
 		{
@@ -117,7 +116,11 @@ public class MainTestClass {
 			capabilities.setCapability("os", "Windows");
 			capabilities.setCapability("os_version", "11");
 			capabilities.setCapability("browser_version", "latest"); 
+			capabilities.setPlatform(Platform.ANY); 
+
 			driver = new RemoteWebDriver(new URL(URL), capabilities);
+			Capabilities caps = ((RemoteWebDriver) driver).getCapabilities();
+			System.out.println(caps.getVersion());
 			driver.manage().window().maximize();
 			driver.get("https://www.amazon.in/");
 		}
@@ -148,22 +151,20 @@ public class MainTestClass {
 		if (!isBlankOrNull(locator)) {
 			try {
 				if (locator.startsWith("@id")) {
-					webElement = MainTestClass.driver.findElement(By.id(removeStart(locator, "@id=")));
+					webElement = driver.findElement(By.id(removeStart(locator, "@id=")));
 				} else if (locator.startsWith("@name")) {
-					webElement = MainTestClass.driver.findElement(By.name(removeStart(locator, "@name=")));
+					webElement = driver.findElement(By.name(removeStart(locator, "@name=")));
 				} else if (locator.startsWith("@linkText")) {
-					webElement = MainTestClass.driver.findElement(By.linkText(removeStart(locator, "@linkText=")));
+					webElement = driver.findElement(By.linkText(removeStart(locator, "@linkText=")));
 				} else if (locator.startsWith("@partialLinkText")) {
-					webElement = MainTestClass.driver
-							.findElement(By.partialLinkText(removeStart(locator, "@partialLinkText=")));
+					webElement = driver.findElement(By.partialLinkText(removeStart(locator, "@partialLinkText=")));
 				} else if (locator.startsWith("@xpath")) {
-					webElement = MainTestClass.driver.findElement(By.xpath(removeStart(locator, "@xpath=")));
+					webElement = driver.findElement(By.xpath(removeStart(locator, "@xpath=")));
 				} else if (locator.startsWith("@css")) {
-					webElement = MainTestClass.driver.findElement(By.cssSelector(removeStart(locator, "@css=")));
+					webElement = driver.findElement(By.cssSelector(removeStart(locator, "@css=")));
 				} else if (locator.startsWith("@className")) {
-					webElement = MainTestClass.driver.findElement(By.className(removeStart(locator, "@className=")));
+					webElement = driver.findElement(By.className(removeStart(locator, "@className=")));
 				}
-
 			} catch (NoSuchElementException e) {
 			} catch (RuntimeException e) {
 				e.printStackTrace();

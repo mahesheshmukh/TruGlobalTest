@@ -77,7 +77,6 @@ public class MobileTestBase {
 
 	@BeforeMethod(alwaysRun = true)
 	@org.testng.annotations.Parameters(value = { "config", "environment" })
-	@Configuration
 	public void openBrowserstack(String config_file, String environment) throws InterruptedException{
 		try
 		{
