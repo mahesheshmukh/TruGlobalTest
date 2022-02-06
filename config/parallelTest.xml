@@ -16,4 +16,21 @@
             <class name="Amazon.Web.AddToCartTest"/>
         </classes>
     </test>
+    
+    <test name="SingleTestEnv3">
+		<parameter name="config" value="parallelMob.conf.json" />
+		<parameter name="environment" value="env1" />
+		<classes>
+			<class name="Amazon.Mobile.AddToCartMobTest" />
+		</classes>
+	</test>
+
+	<test name="SingleTestEnv4">
+		<parameter name="config" value="parallelMob.conf.json" />
+		<parameter name="environment" value="env2" />
+		<classes>
+			<class name="Amazon.Mobile.AddToCartMobTest" />
+		</classes>
+	</test>
+
 </suite>
